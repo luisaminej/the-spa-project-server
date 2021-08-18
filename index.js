@@ -21,10 +21,19 @@ app.use("/api/users", require('./routes/users'))
 app.use("/api/auth", require('./routes/auth'))
 
 app.use('/api/products', require('./routes/products/products'))
+app.use('/api/services', require('./routes/services/services'))
+
+
+
+
+
+
+
+
 app.use('/api/products/body', require('./routes/products/body'))
 app.use('/api/products/face', require('./routes/products/face'))
 
-app.use('/api/services', require('./routes/services/services'))
+
 app.use('/api/services/bodily', require('./routes/services/bodily'))
 app.use('/api/services/facials', require('./routes/services/facials'))
 app.use('/api/services/giftcard', require('./routes/services/giftcard'))

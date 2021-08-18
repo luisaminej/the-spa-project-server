@@ -1,20 +1,21 @@
-const Products = require('./../../models/products/Products.model')
+
+const Body =require('../../models/products/Body.model')
+const Face =require('../../models/products/Face.model')
 
 
-exports.getProducts = async (req, res) => {
-    
+
+exports.getProducts= async (req, res) => {
+
     try {
-        const products = await Products.find({})
+        const body = await Body.find({})
+        const face = await Face.find({})
 
+        console.log(body, face)
 
-        console.log(products)
+        res.json({body, face})
 
-        res.json(products)
 
     } catch (error) {
-        
+
     }
-
-
-    
 }
