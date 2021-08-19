@@ -15,10 +15,10 @@ exports.getBodily = async (req, res) => {
 
 exports.createBodily = async (req, res) => {
 
-    const { name, image, pricelist, price } = req.body
+    const { name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Bodily.create({ name, image, pricelist, price })
+        const response = await Bodily.create({ name, image, pricelist, price, slug, description, details })
         res.json(response)
 
     } catch (e) {
@@ -29,10 +29,10 @@ exports.createBodily = async (req, res) => {
 
 exports.updateBodily = async (req, res) => {
 
-    const { bodilyId, name, image, pricelist, price } = req.body
+    const { bodilyId, name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Bodily.findByIdAndUpdate(bodilyId, { name, image, pricelist, price }, { new: true })
+        const response = await Bodily.findByIdAndUpdate(bodilyId, { name, image, pricelist, price, slug, description, details }, { new: true })
 
         
         res.json(response)

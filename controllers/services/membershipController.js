@@ -15,10 +15,10 @@ exports.getMembership = async (req, res) => {
 
 exports.createMembership = async (req, res) => {
 
-    const { name, image, pricelist, price } = req.body
+    const { name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Membership.create({ name, image, pricelist, price })
+        const response = await Membership.create({ name, image, pricelist, price, slug, description, details })
         res.json(response)
 
     } catch (e) {
@@ -29,10 +29,10 @@ exports.createMembership = async (req, res) => {
 
 exports.updateMembership = async (req, res) => {
 
-    const { membershipId, name, image, pricelist, price } = req.body
+    const { membershipId, name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Membership.findByIdAndUpdate(membershipId, { name, image, pricelist, price }, { new: true })
+        const response = await Membership.findByIdAndUpdate(membershipId, { name, image, pricelist, price, slug, description, details }, { new: true })
 
         
         res.json(response)

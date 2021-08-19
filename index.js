@@ -35,6 +35,7 @@ app.use('/api/products/face', require('./routes/products/face'))
 
 
 app.use('/api/services/bodily', require('./routes/services/bodily'))
+app.use('/api/services/massage', require('./routes/services/massage'))
 app.use('/api/services/facials', require('./routes/services/facials'))
 app.use('/api/services/giftcard', require('./routes/services/giftcard'))
 app.use('/api/services/facials', require('./routes/services/facials'))

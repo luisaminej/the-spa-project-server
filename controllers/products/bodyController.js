@@ -15,10 +15,10 @@ exports.getBody = async (req, res) => {
 
 exports.createBody = async (req, res) => {
 
-    const { name, image, pricelist, price } = req.body
+    const { name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Body.create({ name, image, pricelist, price })
+        const response = await Body.create({ name, image, pricelist, price, slug, description, details })
         res.json(response)
 
     } catch (e) {
@@ -29,10 +29,10 @@ exports.createBody = async (req, res) => {
 
 exports.updateBody = async (req, res) => {
 
-    const { bodyId, name, image, pricelist, price } = req.body
+    const { bodyId, name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Body.findByIdAndUpdate(bodyId, { name, image, pricelist, price }, { new: true })
+        const response = await Body.findByIdAndUpdate(bodyId, { name, image, pricelist, price, slug, description, details }, { new: true })
 
         
         res.json(response)

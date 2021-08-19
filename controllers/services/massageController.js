@@ -15,10 +15,10 @@ exports.getMassage = async (req, res) => {
 
 exports.createMassage = async (req, res) => {
 
-    const { name, image, pricelist, price } = req.body
+    const { name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Massage.create({ name, image, pricelist, price })
+        const response = await Massage.create({ name, image, pricelist, price, slug, description, details })
         res.json(response)
 
     } catch (e) {
@@ -29,10 +29,10 @@ exports.createMassage = async (req, res) => {
 
 exports.updateMassage = async (req, res) => {
 
-    const { massageId, name, image, pricelist, price } = req.body
+    const { massageId, name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Massage.findByIdAndUpdate(massageId, { name, image, pricelist, price }, { new: true })
+        const response = await Massage.findByIdAndUpdate(massageId, { name, image, pricelist, price, slug, description, details }, { new: true })
 
         
         res.json(response)

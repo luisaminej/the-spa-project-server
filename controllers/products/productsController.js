@@ -19,3 +19,23 @@ exports.getProducts= async (req, res) => {
 
     }
 }
+
+
+exports.getProduct = async (req, res) => {
+console.log("hola")
+
+const {singleProduct} = req.params
+    try {
+        const body = await Body.find({slug:singleProduct})
+        const face = await Face.find({slug:singleProduct})
+        console.log(body)
+
+        const result = [...body,...face]
+        console.log("resultado", result)
+
+        res.json(result)
+
+    } catch (error) {
+
+    }
+}

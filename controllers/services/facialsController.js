@@ -15,10 +15,10 @@ exports.getFacials = async (req, res) => {
 
 exports.createFacials = async (req, res) => {
 
-    const { name, image, pricelist, price } = req.body
+    const { name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Facials.create({ name, image, pricelist, price })
+        const response = await Facials.create({ name, image, pricelist, price, slug, description, details })
         res.json(response)
 
     } catch (e) {
@@ -29,10 +29,10 @@ exports.createFacials = async (req, res) => {
 
 exports.updateFacials = async (req, res) => {
 
-    const { facialsId, name, image, pricelist, price } = req.body
+    const { facialsId, name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Facials.findByIdAndUpdate(facialsId, { name, image, pricelist, price }, { new: true })
+        const response = await Facials.findByIdAndUpdate(facialsId, { name, image, pricelist, price, slug, description, details }, { new: true })
 
         
         res.json(response)

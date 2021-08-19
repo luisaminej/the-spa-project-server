@@ -15,10 +15,10 @@ exports.getGiftcard = async (req, res) => {
 
 exports.createGiftcard = async (req, res) => {
 
-    const { name, image, pricelist, price } = req.body
+    const { name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Giftcard.create({ name, image, pricelist, price })
+        const response = await Giftcard.create({ name, image, pricelist, price, slug, description, details })
         res.json(response)
 
     } catch (e) {
@@ -29,10 +29,10 @@ exports.createGiftcard = async (req, res) => {
 
 exports.updateGiftcard = async (req, res) => {
 
-    const { giftcardId, name, image, pricelist, price } = req.body
+    const { giftcardId, name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Giftcard.findByIdAndUpdate(giftcardId, { name, image, pricelist, price }, { new: true })
+        const response = await Giftcard.findByIdAndUpdate(giftcardId, { name, image, pricelist, price, slug, description, details }, { new: true })
 
         
         res.json(response)

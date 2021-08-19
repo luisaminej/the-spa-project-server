@@ -15,10 +15,10 @@ exports.getPacks = async (req, res) => {
 
 exports.createPacks = async (req, res) => {
 
-    const { name, image, pricelist, price } = req.body
+    const { name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Packs.create({ name, image, pricelist, price })
+        const response = await Packs.create({ name, image, pricelist, price, slug, description, details })
         res.json(response)
 
     } catch (e) {
@@ -29,10 +29,10 @@ exports.createPacks = async (req, res) => {
 
 exports.updatePacks = async (req, res) => {
 
-    const { packsId, name, image, pricelist, price } = req.body
+    const { packsId, name, image, pricelist, price, slug, description, details } = req.body
 
     try {
-        const response = await Packs.findByIdAndUpdate(packsId, { name, image, pricelist, price }, { new: true })
+        const response = await Packs.findByIdAndUpdate(packsId, { name, image, pricelist, price, slug, description, details }, { new: true })
 
         
         res.json(response)
