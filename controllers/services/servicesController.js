@@ -29,7 +29,7 @@ exports.getServices = async (req, res) => {
     }
 }
 
-exports.getProduct = async (req, res) => {
+exports.getService = async (req, res) => {
     console.log("hola")
 
     const {singleService} = req.params

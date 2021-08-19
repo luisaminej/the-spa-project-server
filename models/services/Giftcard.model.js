@@ -14,7 +14,9 @@ const giftcardSchema        = new Schema({
     price: String,
     slug: String,
     description: String,
-    details: String
+    details1: String,
+    details2: String,
+    details3: String
 
     
     
